@@ -1,0 +1,15 @@
+# Joining Tables
+
+1- This query is looking for the top 10 countries in terms of  customer numbers. First of all, I selected the right path connecting the customer_id and countries: customer (A), address (B), city (C) , and finally counrty (D). Connected the main and foreign keys, I managed to join two separate tables, using only the necessary information. Since we needed the customer numbers for each country, I used the count clause for customer. I’s grouped according to the countries starting from with the most customer, limited to the top 10. 
+
+```
+SELECT D.country AS top_ten_country,
+              COUNT (customer_id) AS customer_count
+FROM customer A
+INNER JOIN address B ON A.address_id = B.address_id
+INNER JOIN city C ON B.city_id = C.city_id
+INNER JOIN country D ON C.country_id = D.country_id
+GROUP BY country
+ORDER BY customer_count DESC
+LIMIT 10
+```
