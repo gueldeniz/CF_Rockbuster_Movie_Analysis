@@ -13,3 +13,38 @@ GROUP BY country
 ORDER BY customer_count DESC
 LIMIT 10
 ```
+2-	Top 10 cities within the top 10 countries. This query is very similar to the one on the first step. For this query I had to add the city table through the city key in order to find the 10 ten cities within the top 10 countries. At first, I find it difficult to arrange it accordingly to the top ten country from the first step. However, using the “WHERE IN” clause helped me to norrow down the cities to selected 10 countries.
+
+```
+SELECT  C.city AS top_ten_city,
+        COUNT (customer_id) AS customer_count
+FROM customer A
+INNER JOIN address B ON A.address_id = B.address_id
+INNER JOIN city C ON B.city_id = C.city_id
+INNER JOIN country D ON C.country_id = D.country_id
+WHERE country IN (‘India’, ‘China’, ‘United States’, ‘Japan’, ‘Mexico’, ‘Brazil’, ‘Russian Federation’, ‘Philippines’, ‘Turkey’, Indonesia’)
+GROUP BY city
+ORDER BY customer_count DESC
+LIMIT 10
+```
+
+3-	This query is written to find the top 5 customers in the top 10 cities who have paid the highest total amounts to Rockbuster. The query is designed to show the following columns: Customer ID, Customer First Name and Last Name, Country, City, Total Amount Paid. 
+So, for this query, the info for the 5 top paying customers within the top 10 cities (previously found) is required. In this query, the order of the tables is changed (Payment is the first table – A - instead of the customer table.) and in total 5 tables were joined together.  Joint tables are filtered according to the needs, that is, within the previously found 10 countries and cities and eventually 5 most paying customers. 
+
+```
+SELECT  A. customer_id,
+        B. first_name AS customer_first_name,
+	      B. last_name AS customer_last_name,
+        D.city,
+        E. country,
+        SUM (amount) AS total_amount_paid
+FROM payment A
+INNER JOIN customer B ON A.customer_id = B.customer_id
+INNER JOIN address C ON B.address_id = C.address_id
+INNER JOIN city D ON C.city_id = D.city_id
+INNER JOIN country E ON D.country_id = E.country_id
+AND city IN ('Aurora','Tokat','Tarsus','Atlixco','Emeishan','Pontianak','Shimoga','Aparecida de Goinia','Zalantun','Taguig')
+GROUP BY A.customer_id, B.first_name, B.last_name, D.city, E.country
+ORDER BY total_amount_paid DESC
+LIMIT 5
+```
