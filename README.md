@@ -28,7 +28,7 @@ I answered all the business questions for Rockbuster Stealth LLC and made sugges
 - Communicated results to stakeholder
 
 ## SQL Query example with CTE
-
+````
 	WITH average_cte AS 
 	(SELECT  A. customer_id,
 	B. first_name AS customer_first_name,
@@ -46,7 +46,6 @@ I answered all the business questions for Rockbuster Stealth LLC and made sugges
 	LIMIT 5) 
 	SELECT AVG (total_amount_paid) AS average_amount_paid
 	FROM average_cte
-	
-## Presentation
+````	
 
 
