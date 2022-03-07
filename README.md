@@ -28,6 +28,9 @@ I answered all the business questions for Rockbuster Stealth LLC and made sugges
 - Communicated results to stakeholder
 
 ## SQL Query example with CTE
+
+With this CTE, I aimed to find the average amount paid by the top 5 customers, living in top 10 countries:
+
 ````
 	WITH average_cte AS 
 	(SELECT  A. customer_id,
