@@ -43,7 +43,7 @@ With this CTE, I aimed to find the average amount paid by the top 5 customers, l
 	INNER JOIN address C ON B.address_id = C.address_id
 	INNER JOIN city D ON C.city_id = D.city_id
 	INNER JOIN country E ON D.country_id = E.country_id
-	AND city IN ('Aurora','Tokat','Tarsus','Atlixco','Emeishan','Pontianak','Shimoga','Aparecida de 	Goinia','Zalantun','Taguig')
+	AND city IN ('Aurora','Tokat','Tarsus','Atlixco','Emeishan','Pontianak','Shimoga','Aparecida de Goinia','Zalantun','Taguig')
 	GROUP BY A.customer_id, B.first_name, B.last_name, D.city, E.country
 	ORDER BY total_amount_paid DESC
 	LIMIT 5) 
