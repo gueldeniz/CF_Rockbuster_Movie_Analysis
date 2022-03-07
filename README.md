@@ -1,4 +1,4 @@
-# Rockbuster-movies-analysis
+# Rockbuster Movies Analysis (by Career Foundry)
 
 In this project, I worked as a junior data analyst for the mock movie company Rockbuster Stealth LLC.
 
