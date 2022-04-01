@@ -3,7 +3,7 @@
 In this project, I worked as a junior data analyst for the mock movie company Rockbuster Stealth LLC.
 
 ## Information
-Rockbuster Stealth LLC i s a movie rental company that used to have stores around the world. Due to stiff competition from streaming services such as Netflix and Amazon Prime, the Rockbuster Stealth management team i s planning to use i ts existing movie licenses to launch an online video rental service in order to stay competitive.
+Rockbuster Stealth LLC i s a movie rental company that used to have stores around the world. Due to stiff competition from streaming services such as Netflix and Amazon Prime, the Rockbuster Stealth management team is planning to use its existing movie licenses to launch an online video rental service in order to stay competitive.
 
 During this project, I have loaded Rockbuster’s data into a relational database management system (RDBMS) and used SQL to analyze the data and answer any ad-hoc business questions that BI and marketing departments needed.
 
@@ -12,8 +12,8 @@ I answered all the business questions for Rockbuster Stealth LLC and made sugges
 
 - Which movies contributed the most/least to revenue gain?
 - What was the average rental duration for all videos?
-- Which countries are Rockbuster customers based i n?
-- Where are customers with a high l ifetime value based?
+- Which countries are Rockbuster customers based in?
+- Where are customers with a high lifetime value based?
 - Do sales figures vary between geographic regions?
 
 
